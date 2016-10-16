@@ -1,0 +1,201 @@
+<html>
+   <head>
+      <title>
+      </title>
+
+   <script type='text/javascript' src='http://www.google.com/jsapi'> </script>
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <script src="js/bootstrap.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="bodyelements.css">
+    <script>
+
+     google.load('visualization', '1', {'packages': ['geomap']});
+     google.setOnLoadCallback(drawMap2);
+
+     var a=[];
+     var x=64;
+      for(var i=0;i<36;i++)
+      {
+         a[i]=getRndInteger(100000, 10000000);
+         console.log(a[i]);
+         x++;
+      }
+
+      i=0;
+
+     function drawMap2()
+     {
+      var data2 = new google.visualization.DataTable();
+
+      data2.addRows(35);
+
+      data2.addColumn('string', 'State');
+      data2.addColumn('number', 'Population');
+
+      data2.setValue(0, 0, 'Andhra Pradesh');
+      data2.setValue(0, 1, a[++i]);
+
+      data2.setValue(1, 0, 'Arunachal Pradesh');
+      data2.setValue(1, 1, a[++i]);   
+
+      data2.setValue(2, 0, 'Assam');
+      data2.setValue(2, 1, a[++i]);   
+
+      data2.setValue(3, 0, 'Bihar');
+      data2.setValue(3, 1, a[++i]);
+
+      data2.setValue(4, 0, 'Chhattisgarh');
+      data2.setValue(4, 1, a[++i]);
+
+      data2.setValue(5, 0, 'Goa');
+      data2.setValue(5, 1, a[++i]);
+
+      data2.setValue(6, 0, 'Gujarat');
+      data2.setValue(6, 1, a[++i]);
+
+      data2.setValue(7, 0, 'Haryana');
+      data2.setValue(7, 1, a[++i]);
+
+      data2.setValue(8, 0, 'Himachal Pradesh');
+      data2.setValue(8, 1, a[++i]);
+
+      data2.setValue(9, 0, 'Jammu and Kashmir');
+      data2.setValue(9, 1, a[++i]);
+
+      data2.setValue(10, 0, 'Jharkhand');
+      data2.setValue(10, 1, a[++i]);
+
+      data2.setValue(11, 0, 'Karnataka');
+      data2.setValue(11, 1, a[++i]);   
+
+      data2.setValue(12, 0, 'Kerala');
+      data2.setValue(12, 1, a[++i]);
+         
+      data2.setValue(13, 0, 'Madhya Pradesh');
+      data2.setValue(13, 1, a[++i]);
+
+      data2.setValue(14, 0, 'Maharashtra');
+      data2.setValue(14, 1, a[++i]);
+
+      data2.setValue(15, 0, 'Manipur');
+      data2.setValue(15, 1, a[++i]);
+
+      data2.setValue(16, 0, 'Meghalaya');
+      data2.setValue(16, 1, a[++i]);
+
+      data2.setValue(17, 0, 'Mizoram');
+      data2.setValue(17, 1, a[++i]);
+
+      data2.setValue(18, 0, 'Nagaland');
+      data2.setValue(18, 1, a[++i]);
+
+      data2.setValue(19, 0, 'Orissa');
+      data2.setValue(19, 1, a[++i]);
+
+      data2.setValue(20, 0, 'Punjab');
+      data2.setValue(20, 1, a[++i]); 
+
+      data2.setValue(21, 0, 'Rajasthan');
+      data2.setValue(21, 1, a[++i]);     
+
+      data2.setValue(22, 0, 'Sikkim');
+      data2.setValue(22, 1, a[++i]);
+      
+      data2.setValue(23, 0, 'Tamil Nadu');
+      data2.setValue(23, 1, a[++i]);
+
+      data2.setValue(24, 0, 'Tripura');
+      data2.setValue(24, 1, a[++i]);
+
+      data2.setValue(25, 0, 'Uttar Pradesh');
+      data2.setValue(25, 1, a[++i]);
+
+      //note Uttarakhand will not work
+      
+      data2.setValue(26, 0, 'Uttaranchal');
+      data2.setValue(26, 1, a[++i]);
+
+      data2.setValue(27, 0, 'West Bengal');
+      data2.setValue(27, 1, a[++i]);
+      
+
+      data2.setValue(28, 0, 'Delhi');
+      data2.setValue(28, 1, a[++i]);
+
+      data2.setValue(29, 0, 'Andaman and Nicobar Islands');
+      data2.setValue(29, 1, a[++i]);
+
+      data2.setValue(30, 0, 'Chandigarh');
+      data2.setValue(30, 1, a[++i]);
+
+      data2.setValue(31, 0, 'Dadra and Nagar Haveli');
+      data2.setValue(31, 1, a[++i]);
+
+      data2.setValue(32, 0, 'Daman and Diu');
+      data2.setValue(32, 1, a[++i]);
+
+      data2.setValue(33, 0, 'Lakshadweep');
+      data2.setValue(33, 1, a[++i]);
+
+      data2.setValue(34, 0, 'Puducherry');
+      data2.setValue(34, 1, a[++i]);
+
+      var options = {};
+      options['region'] = 'IN';
+      options['width'] = '800px';
+      options['height'] = '800px';
+      options['dataMode'] = 'regions';
+
+      var container2 = document.getElementById('map_canvas');
+      var geomap2 = new google.visualization.GeoMap(container2);
+      geomap2.draw(data2, options)   
+        
+     }
+     
+     function getRndInteger(min, max) 
+     {
+         return Math.floor(Math.random() * (max - min + 1) ) + min;
+      }  
+     
+    </script>
+
+   </head>
+
+<body>
+
+
+   <div class="container-fluid" style="background-color:#c4c4c4; padding-top:10px; padding-bottom:10px; position:relative;">
+      <img src="a1.jpg" alt="LOGO" height="127px" width="180px" style="margin-left:10px" />&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+      <font style="font-size:30px; top:50%; position:absolute;">Welcome To Aadhar Portal</font>
+      <img src="emblem.jpg" alt="IndianEmblem" height="127px" width="85px" style="position:absolute; right:50px;" />
+   </div>
+
+<br>
+   <div class="container-fluid" >
+       <div class=" navbar navbar-default">
+         <div class="container">
+            <div class="navbar-header">
+               <a href="HomeLayout.html" class="navbar-brand">Cosmic Developers</a>
+            </div>
+            <div>
+               <ul class="nav navbar-nav">
+                  <li><a href="HomeLayout.html">Home</a></li>
+                  <li><a href="registration.php">Register</a></li>
+                  
+                  <li><a href="charta.html">charts</a></li>
+                  <li><a href="mmm.html">Map Analysis</a></li>
+               </ul>
+            </div>
+         </div>
+       </div>
+   </div>
+   <div style="position: relative; left:300px;" id='map_canvas'></div>
+
+<a href="http://www.censusindia.gov.in/Census_Data_2001/Census_data_finder/A_Series/Total_population.htm">Source: Census of India 2001</a>
+
+<br>
+
+   <div id='oo'></div>
+</body>
+
+</html>

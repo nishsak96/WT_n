@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="bodyelements.css">
+  
+
+    <style type="text/css">
+      
+      .abcc
+      {
+         border: black 2px solid;
+         border-radius: 5%;
+      }
+    </style>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table, 
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+      // Create the data table.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Topping');
+      data.addColumn('number', 'No of Individuals');
+      data.addRows([['Open', 300],['SC', 80],['ST', 50],['OBC', 120],['NT', 30]]);
+
+      // Set chart options
+      var options = {'title':'Distribution of reserved classes',
+                     'width':800,
+                     'height':600};
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div1'));
+      chart.draw(data, options);
+
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+      chart.draw(data, options);
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div3'));
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+
+  <body>
+
+
+
+  <div class="container-fluid" style="background-color:#c4c4c4; padding-top:10px; padding-bottom:10px; position:relative;">
+    <img src="a1.jpg" alt="LOGO" height="127px" width="180px" style="margin-left:10px" />&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+    <font style="font-size:30px; top:50%; position:absolute;">Welcome To Aadhar Portal</font>
+    <img src="emblem.jpg" alt="IndianEmblem" height="127px" width="85px" style="position:absolute; right:50px;" />
+  </div>
+
+<br>
+  <div class="container-fluid" >
+      <div class=" navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="HomeLayout.html" class="navbar-brand">Cosmic Developers</a>
+          </div>
+          <div>
+            <ul class="nav navbar-nav">
+              <li><a href="HomeLayout.html">Home</a></li>
+              <li><a href="registration.php">Register</a></li>
+              
+              <li><a href="charta.html">charts</a></li>
+              <li><a href="mmm.html">Map Analysis</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+   </div>
+  
+  <div style="position: relative; left: 20%;">
+    <div class="abcc" id="chart_div1" style="width:800; height:600"></div>
+    <br>
+
+    <div class="abcc" id="chart_div2" style="width:800; height:600"></div>
+    <br>
+    <div class="abcc" id="chart_div3" style="width:800; height:600"></div>
+  </div>
+  
+  </body>
+</html>
